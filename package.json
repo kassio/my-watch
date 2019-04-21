@@ -23,5 +23,8 @@
   },
   "dependencies": {
     "@fitbit/sdk-cli": "^1.6.0"
+  },
+  "scripts": {
+    "build": "fitbit-build"
   }
 }
