@@ -1,0 +1,8 @@
+<svg class="background">
+  <g id="battery">
+  </g>
+  <g id="date-time">
+    <text id="time" class="time"/>
+    <text id="date" class="date"/>
+  </g>
+</svg>
