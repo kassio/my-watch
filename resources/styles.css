@@ -55,11 +55,99 @@
 }
 
 .active-minutes {
-  x: 26;
+  x: 30;
   y: 20;
   text-anchor: start;
   text-length: 10;
   fill: white;
   font-size: 20;
-  font-family: Colfax-Light;
+  font-family: SevilleSharp-Book;
+}
+
+.calories-container {
+  x: 10;
+  y: 130;
+}
+
+.calories-icon {
+  width: 24;
+  height: 24;
+  fill: orange;
+  opacity: 1;
+}
+
+.calories {
+  x: 30;
+  y: 20;
+  text-anchor: start;
+  text-length: 10;
+  fill: white;
+  font-size: 20;
+  font-family: SevilleSharp-Book;
+}
+
+.elevation-gain-container {
+  x: 10;
+  y: 160;
+}
+
+.elevation-gain-icon {
+  width: 24;
+  height: 24;
+  fill: yellow;
+  opacity: 1;
+}
+
+.elevation-gain {
+  x: 30;
+  y: 20;
+  text-anchor: start;
+  text-length: 10;
+  fill: white;
+  font-size: 20;
+  font-family: SevilleSharp-Book;
+}
+
+.steps-container {
+  x: 10;
+  y: 190;
+}
+
+.steps-icon {
+  width: 24;
+  height: 24;
+  fill: purple;
+  opacity: 1;
+}
+
+.steps {
+  x: 30;
+  y: 20;
+  text-anchor: start;
+  text-length: 10;
+  fill: white;
+  font-size: 20;
+  font-family: SevilleSharp-Book;
+}
+
+.distance-container {
+  x: 10;
+  y: 220;
+}
+
+.distance-icon {
+  width: 24;
+  height: 24;
+  fill: blue;
+  opacity: 1;
+}
+
+.distance {
+  x: 30;
+  y: 20;
+  text-anchor: start;
+  text-length: 10;
+  fill: white;
+  font-size: 20;
+  font-family: SevilleSharp-Book;
 }

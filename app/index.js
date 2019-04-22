@@ -6,40 +6,33 @@ import { battery, charger } from 'power';
 import { me as appbit } from 'appbit';
 import { today } from 'user-activity';
 
-if (appbit.permissions.granted('access_activity')) {
-  document.getElementById('active-minutes').text = today.adjusted.activeMinutes;
-  console.log(`calories ${today.adjusted.calories}`);
-  console.log(`distance ${today.adjusted.distance}`);
-  console.log(`elevationGain ${today.adjusted.elevationGain}`);
-  console.log(`steps ${today.adjusted.steps}`);
-}
-
 clock.granularity = 'minutes';
 
 clock.ontick = evt => {
-  setTime(evt);
-  setDate(evt);
+  renderTime(evt);
+  renderDate(evt);
+  renderStats();
 };
 
 battery.onchange = () => {
-  updateBatteryIcon();
+  renderBattery();
 };
 
-const setTime = evt => {
+const renderTime = evt => {
   const { hours, minutes } = watchTime(evt);
   const watchTimeLabel = document.getElementById('time');
 
   watchTimeLabel.text = `${hours}:${minutes}`;
 };
 
-const setDate = evt => {
+const renderDate = evt => {
   const { weekDay, day, month } = watchDate(evt);
   const watchDateLabel = document.getElementById('date');
 
   watchDateLabel.text = `${weekDay}, ${day}/${month}`;
 };
 
-const updateBatteryIcon = () => {
+const renderBattery = () => {
   const icon = document.getElementById('battery-icon');
   const batteryLabel = document.getElementById('battery');
   const batteryLevel = Math.floor(battery.chargeLevel);
@@ -55,5 +48,15 @@ const updateBatteryIcon = () => {
   } else {
     icon.style.fill = 'green';
     icon.width = batteryLevel * 5 / 10;
+  }
+};
+
+const renderStats = () => {
+  if (appbit.permissions.granted('access_activity')) {
+    document.getElementById('active-minutes').text = today.adjusted.activeMinutes;
+    document.getElementById('calories').text = today.adjusted.calories;
+    document.getElementById('elevation-gain').text = today.adjusted.elevationGain;
+    document.getElementById('steps').text = today.adjusted.steps;
+    document.getElementById('distance').text = today.adjusted.distance;
   }
 };
