@@ -1,8 +1,18 @@
 import clock from 'clock';
 import document from 'document';
 import { watchTime, watchDate } from './components.js';
-
 import { battery, charger } from 'power';
+
+import { me as appbit } from 'appbit';
+import { today } from 'user-activity';
+
+if (appbit.permissions.granted('access_activity')) {
+  document.getElementById('active-minutes').text = today.adjusted.activeMinutes;
+  console.log(`calories ${today.adjusted.calories}`);
+  console.log(`distance ${today.adjusted.distance}`);
+  console.log(`elevationGain ${today.adjusted.elevationGain}`);
+  console.log(`steps ${today.adjusted.steps}`);
+}
 
 clock.granularity = 'minutes';
 

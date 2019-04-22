@@ -2,7 +2,6 @@
   viewport-fill: black;
 }
 
-
 .time {
   x: 100%-10;
   y: 50;
@@ -36,6 +35,28 @@
 .battery {
   x: 12;
   y: 50;
+  text-anchor: start;
+  text-length: 10;
+  fill: white;
+  font-size: 20;
+  font-family: Colfax-Light;
+}
+
+.active-minutes-container {
+  x: 10;
+  y: 100;
+}
+
+.active-minutes-icon {
+  width: 24;
+  height: 24;
+  fill: red;
+  opacity: 1;
+}
+
+.active-minutes {
+  x: 26;
+  y: 20;
   text-anchor: start;
   text-length: 10;
   fill: white;

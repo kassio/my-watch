@@ -1,25 +1,26 @@
-import { preferences } from "user-settings";
-import * as util from "../common/utils";
+import { preferences } from 'user-settings';
+import * as util from '../common/utils';
 
-export function watchTime(evt)  {
-  let today = evt.date;
-  let hours = today.getHours();
-  if (preferences.clockDisplay === "12h") {
-    // 12h format
-    hours = hours % 12 || 12;
-  } else {
-    // 24h format
-    hours = util.zeroPad(hours);
-  }
-  let minutes = util.zeroPad(today.getMinutes());
+export function watchTime(evt) {
+  const today = evt.date;
+  const hours = formatHours(today.getHours());
+  const minutes = util.zeroPad(today.getMinutes());
 
   return {
     hours,
     minutes
-  }
+  };
 }
 
-export function watchDate(evt)  {
+const formatHours = hours => {
+  if (preferences.clockDisplay === '12h') {
+    return hours % 12 || 12;
+  } else {
+    return util.zeroPad(hours);
+  }
+};
+
+export function watchDate(evt) {
   let today = evt.date;
 
   let weekDay = util.weekDayName(today.getDay());
@@ -30,5 +31,5 @@ export function watchDate(evt)  {
     weekDay,
     day,
     month
-  }
+  };
 }

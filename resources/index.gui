@@ -4,4 +4,9 @@
 
   <rect id="battery-icon" class="battery-icon" rx="5" ry="5"/>
   <text id="battery" class="battery"/>
+
+  <section class="active-minutes-container">
+    <image class="active-minutes-icon" href="icons/stat_am_solid_48px.png" />
+    <text id="active-minutes" class="active-minutes"/>
+  </section>
 </svg>
