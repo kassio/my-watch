@@ -1,8 +1,7 @@
 <svg class="background">
-  <g id="battery">
-  </g>
-  <g id="date-time">
-    <text id="time" class="time"/>
-    <text id="date" class="date"/>
-  </g>
+  <text id="time" class="time"/>
+  <text id="date" class="date"/>
+
+  <rect id="battery-icon" class="battery-icon" rx="5" ry="5"/>
+  <text id="battery" class="battery"/>
 </svg>
