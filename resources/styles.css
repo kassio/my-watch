@@ -42,9 +42,19 @@
   font-family: Colfax-Light;
 }
 
-.active-minutes-container {
-  x: 10;
-  y: 100;
+.stats-container {
+  y: 60%;
+}
+
+.stats-group {
+  width: 50%-20;
+  height: 100%;
+  x: $+10;
+}
+
+.stats-item-container {
+  y: $+10;
+  height: 25;
 }
 
 .active-minutes-icon {
@@ -58,15 +68,10 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;
-}
-
-.calories-container {
-  x: 10;
-  y: 130;
 }
 
 .calories-icon {
@@ -80,15 +85,10 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;
-}
-
-.elevation-gain-container {
-  x: 10;
-  y: 160;
 }
 
 .elevation-gain-icon {
@@ -102,15 +102,10 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;
-}
-
-.steps-container {
-  x: 10;
-  y: 190;
 }
 
 .steps-icon {
@@ -124,15 +119,10 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;
-}
-
-.distance-container {
-  x: 10;
-  y: 220;
 }
 
 .distance-icon {
@@ -146,15 +136,10 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;
-}
-
-.heart-rate-container {
-  x: 10;
-  y: 250;
 }
 
 .heart-rate-icon {
@@ -168,7 +153,7 @@
   x: 30;
   y: 20;
   text-anchor: start;
-  text-length: 10;
+  text-length: 99;
   fill: white;
   font-size: 20;
   font-family: SevilleSharp-Book;

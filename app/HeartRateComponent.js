@@ -9,7 +9,7 @@ const render = () => {
     const heartRateLabel = document.getElementById('heart-rate');
 
     heartRateSensor.addEventListener('reading', () => {
-      heartRateLabel.text = heartRateSensor.heartRate;
+      heartRateLabel.text = `${heartRateSensor.heartRate} BPM`;
     });
 
     startSensor(heartRateSensor);
