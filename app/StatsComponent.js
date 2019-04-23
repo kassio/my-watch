@@ -1,15 +1,20 @@
 import document from 'document';
 import { me as appbit } from 'appbit';
-import { today } from 'user-activity';
+import { today, goals } from 'user-activity';
 
 const render = () => {
   if (appbit.permissions.granted('access_activity')) {
-    document.getElementById('active-minutes').text = today.adjusted.activeMinutes;
-    document.getElementById('calories').text = today.adjusted.calories;
-    document.getElementById('elevation-gain').text = today.adjusted.elevationGain;
-    document.getElementById('steps').text = today.adjusted.steps;
-    document.getElementById('distance').text = today.adjusted.distance;
+    setLabel('active-minutes', 'activeMinutes');
+    setLabel('calories');
+    setLabel('elevation-gain', 'elevationGain');
+    setLabel('steps');
+    setLabel('distance');
   }
+};
+
+const setLabel = (label, value = label) => {
+  const text = `${today.adjusted[value]}/${goals[value]}`;
+  document.getElementById(label).text = text;
 };
 
 export default { render };
