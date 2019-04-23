@@ -29,4 +29,9 @@
     <image class="distance-icon" href="icons/stat_dist_solid_48px.png" />
     <text id="distance" class="distance"/>
   </section>
+
+  <section class="heart-rate-container">
+    <image class="heart-rate-icon" href="icons/stat_hr_solid_48px.png" />
+    <text id="heart-rate" class="heart-rate"/>
+  </section>
 </svg>
