@@ -8,35 +8,45 @@
   <section class="stats-container">
     <section class="stats-group">
       <section class="stats-item-container">
-        <image class="active-minutes-icon" href="icons/stat_am_solid_48px.png" />
-        <text id="active-minutes" class="active-minutes"/>
+        <arc class="active-minutes stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="active-minutes-progress" class="active-minutes stats-progress progress-done" opacity="1" arc-width="5" start-angle="0"/>
+        <image class="stats-icon active-minutes" href="icons/stat_am_solid_48px.png"/>
+        <text id="active-minutes" class="stats-label"/>
       </section>
 
       <section class="stats-item-container">
-        <image class="calories-icon" href="icons/stat_cals_solid_48px.png" />
-        <text id="calories" class="calories"/>
+        <arc class="calories stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="calories-progress" class="calories stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
+        <image class="stats-icon calories" href="icons/stat_cals_solid_48px.png"/>
+        <text id="calories" class="stats-label"/>
       </section>
 
       <section class="stats-item-container">
-        <image class="elevation-gain-icon" href="icons/stat_floors_solid_48px.png" />
-        <text id="elevation-gain" class="elevation-gain"/>
+        <arc class="elevation-gain stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="elevation-gain-progress" class="elevation-gain stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
+        <image class="stats-icon elevation-gain" href="icons/stat_floors_solid_48px.png"/>
+        <text id="elevation-gain" class="stats-label"/>
       </section>
     </section>
 
     <section class="stats-group">
       <section class="stats-item-container">
-        <image class="steps-icon" href="icons/stat_steps_solid_48px.png" />
-        <text id="steps" class="steps"/>
+        <arc class="steps stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="steps-progress" class="steps stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
+        <image class="stats-icon steps" href="icons/stat_steps_solid_48px.png"/>
+        <text id="steps" class="stats-label"/>
       </section>
 
       <section class="stats-item-container">
-        <image class="distance-icon" href="icons/stat_dist_solid_48px.png" />
-        <text id="distance" class="distance"/>
+        <arc class="distance stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="distance-progress" class="distance stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
+        <image class="stats-icon distance" href="icons/stat_dist_solid_48px.png"/>
+        <text id="distance" class="stats-label"/>
       </section>
 
       <section class="stats-item-container">
-        <image class="heart-rate-icon" href="icons/stat_hr_solid_48px.png" />
-        <text id="heart-rate" class="heart-rate"/>
+        <image class="stats-icon heart-rate" href="icons/stat_hr_solid_48px.png"/>
+        <text id="heart-rate" class="stats-label"/>
       </section>
     </section>
   </section>

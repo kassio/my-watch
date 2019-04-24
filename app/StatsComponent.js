@@ -4,17 +4,21 @@ import { today, goals } from 'user-activity';
 
 const render = () => {
   if (appbit.permissions.granted('access_activity')) {
-    setLabel('active-minutes', 'activeMinutes');
-    setLabel('calories');
-    setLabel('elevation-gain', 'elevationGain');
-    setLabel('steps');
-    setLabel('distance');
+    setStat('active-minutes', 'activeMinutes');
+    setStat('calories');
+    setStat('elevation-gain', 'elevationGain');
+    setStat('steps');
+    setStat('distance');
   }
 };
 
-const setLabel = (label, value = label) => {
-  const text = `${today.adjusted[value]}/${goals[value]}`;
-  document.getElementById(label).text = text;
+const setStat = (stat, statName = stat) => {
+  const done = today.adjusted[statName];
+  const goal = goals[statName];
+  const progression = done >= goal ? 360 : 360 * (done / goal);
+
+  document.getElementById(stat).text = done;
+  document.getElementById(`${stat}-progress`).sweepAngle = progression;
 };
 
 export default { render };
