@@ -1,23 +1,18 @@
 .time {
-  x: 100%-10;
-  y: 50;
   height: 80;
-  width: 60%;
-  text-anchor: end;
+  width: 100%;
   text-length: 5;
   fill: white;
-  font-size: 60;
-  font-family: System-Bold;
+  font-size: 90;
+  font-family: SevilleSharp-Bold;
 }
 
 .date {
-  x: 100%-15;
-  y: 70;
   text-anchor: end;
   text-length: 10;
   fill: white;
-  font-size: 20;
-  font-family: System-Regular;
+  font-size: 35;
+  font-family: System-Bold;
 }
 
 .battery {
@@ -27,12 +22,12 @@
   text-length: 10;
   fill: white;
   font-size: 20;
-  font-family: Colfax-Light;
+  font-family: Colfax-Medium;
 }
 
 .stats-label {
   x: 50;
-  y: 20;
+  y: 22;
   text-anchor: start;
   text-length: 99;
   fill: white;

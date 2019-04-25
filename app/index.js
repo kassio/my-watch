@@ -12,6 +12,7 @@ clock.ontick = event => {
   StatsComponent.render();
 };
 
+BatteryComponent.render(battery);
 battery.onchange = () => BatteryComponent.render(battery);
 
 HeartRateComponent.render();
