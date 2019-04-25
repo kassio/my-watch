@@ -6,10 +6,9 @@ import { HeartRateSensor } from 'heart-rate';
 const render = () => {
   if (HeartRateSensor) {
     const heartRateSensor = new HeartRateSensor();
-    const heartRateLabel = document.getElementById('heart-rate');
 
     heartRateSensor.addEventListener('reading', () => {
-      heartRateLabel.text = `${heartRateSensor.heartRate} BPM`;
+      document.getElementById('heart-rate').text = `${heartRateSensor.heartRate} BPM`;
     });
 
     startSensor(heartRateSensor);

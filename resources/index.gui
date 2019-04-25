@@ -1,51 +1,51 @@
-<svg class="background">
+<svg viewport-fill="black">
   <text id="time" class="time"/>
   <text id="date" class="date"/>
 
-  <rect id="battery-icon" class="battery-icon" rx="5" ry="5"/>
+  <rect id="battery-icon" x="11" y="11" height="16" width="50" fill="white" rx="5" ry="5"/>
   <text id="battery" class="battery"/>
 
-  <section class="stats-container">
-    <section class="stats-group">
-      <section class="stats-item-container">
-        <arc class="active-minutes stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
-        <arc id="active-minutes-progress" class="active-minutes stats-progress progress-done" opacity="1" arc-width="5" start-angle="0"/>
-        <image class="stats-icon active-minutes" href="icons/stat_am_solid_48px.png"/>
+  <section y="40%">
+    <section width="50%-28" height="100%" x="$+20">
+      <section y="$+10" height="50">
+        <arc id="active-minutes-progress-base" x="-10" y="-10" width="50" height="50" opacity="0.4" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="active-minutes-progress" x="-10" y="-10" width="50" height="50" opacity="1" arc-width="5" start-angle="0"/>
+        <image id="active-minutes-icon" x="3" y="3" width="24" height="24" opacity="1" href="icons/stat_am_solid_48px.png"/>
         <text id="active-minutes" class="stats-label"/>
       </section>
 
-      <section class="stats-item-container">
-        <arc class="calories stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
-        <arc id="calories-progress" class="calories stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
-        <image class="stats-icon calories" href="icons/stat_cals_solid_48px.png"/>
+      <section y="$+10" height="50">
+        <arc id="calories-progress-base" x="-10" y="-10" width="50" height="50" opacity="0.4" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="calories-progress" x="-10" y="-10" width="50" height="50" opacity="1" arc-width="5" start-angle="0"/>
+        <image id="calories-icon" x="3" y="3" width="24" height="24" opacity="1" href="icons/stat_cals_solid_48px.png"/>
         <text id="calories" class="stats-label"/>
       </section>
 
-      <section class="stats-item-container">
-        <arc class="elevation-gain stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
-        <arc id="elevation-gain-progress" class="elevation-gain stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
-        <image class="stats-icon elevation-gain" href="icons/stat_floors_solid_48px.png"/>
+      <section y="$+10" height="50">
+        <arc id="elevation-gain-progress-base" x="-10" y="-10" width="50" height="50" opacity="0.4" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="elevation-gain-progress" x="-10" y="-10" width="50" height="50" opacity="1" arc-width="5" start-angle="0"/>
+        <image id="elevation-gain-icon" x="3" y="3" width="24" height="24" opacity="1" href="icons/stat_floors_solid_48px.png"/>
         <text id="elevation-gain" class="stats-label"/>
       </section>
     </section>
 
-    <section class="stats-group">
-      <section class="stats-item-container">
-        <arc class="steps stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
-        <arc id="steps-progress" class="steps stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
-        <image class="stats-icon steps" href="icons/stat_steps_solid_48px.png"/>
+    <section width="50%-28" height="100%" x="$+20">
+      <section y="$+10" height="50">
+        <arc id="steps-progress-base" x="-10" y="-10" width="50" height="50" opacity="0.4" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="steps-progress" x="-10" y="-10" width="50" height="50" opacity="1" arc-width="5" start-angle="0"/>
+        <image id="steps-icon" x="3" y="3" width="24" height="24" opacity="1" href="icons/stat_steps_solid_48px.png"/>
         <text id="steps" class="stats-label"/>
       </section>
 
-      <section class="stats-item-container">
-        <arc class="distance stats-progress" arc-width="5" start-angle="0" sweep-angle="360"/>
-        <arc id="distance-progress" class="distance stats-progress progress-done" opacity="1" arc-width="5" start-angle="0" sweep-angle="-90"/>
-        <image class="stats-icon distance" href="icons/stat_dist_solid_48px.png"/>
+      <section y="$+10" height="50">
+        <arc id="distance-progress-base" x="-10" y="-10" width="50" height="50" opacity="0.4" arc-width="5" start-angle="0" sweep-angle="360"/>
+        <arc id="distance-progress" x="-10" y="-10" width="50" height="50" opacity="1" arc-width="5" start-angle="0"/>
+        <image id="distance-icon" x="3" y="3" width="24" height="24" opacity="1" href="icons/stat_dist_solid_48px.png"/>
         <text id="distance" class="stats-label"/>
       </section>
 
-      <section class="stats-item-container">
-        <image class="stats-icon heart-rate" href="icons/stat_hr_solid_48px.png"/>
+      <section y="$+10" height="50">
+        <image id="heart-rate-icon" x="3" y="3" width="24" height="24" opacity="1" fill="fb-pink" href="icons/stat_hr_solid_48px.png"/>
         <text id="heart-rate" class="stats-label"/>
       </section>
     </section>
