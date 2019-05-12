@@ -3,15 +3,15 @@
   width: 100%;
   text-length: 5;
   fill: white;
-  font-size: 90;
+  font-size: 85;
   font-family: SevilleSharp-Bold;
 }
 
 .date {
-  text-anchor: end;
+  text-anchor: start;
   text-length: 10;
   fill: white;
-  font-size: 35;
+  font-size: 38;
   font-family: System-Bold;
 }
 

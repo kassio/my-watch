@@ -39,4 +39,4 @@ const toggle = (heartRateSensor, cond) => {
   }
 };
 
-export default { render };
+export default { start: render };

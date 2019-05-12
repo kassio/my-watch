@@ -2,7 +2,7 @@
   "fitbit": {
     "appUUID": "80985e03-3d73-4d9f-aac6-fd48b8abf7e2",
     "appType": "clockface",
-    "appDisplayName": "My Watch",
+    "appDisplayName": "Quick Stats",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -16,7 +16,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "My Watch"
+        "name": "Quick Stats"
       }
     },
     "defaultLanguage": "en-US"

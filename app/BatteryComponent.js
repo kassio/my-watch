@@ -1,5 +1,6 @@
 import document from 'document';
 import { charger } from 'power';
+import { battery } from 'power';
 
 const render = battery => {
   const icon = document.getElementById('battery-icon');
@@ -20,4 +21,9 @@ const render = battery => {
   }
 };
 
-export default { render };
+const start = () => {
+  render(battery);
+  battery.onchange = () => render(battery);
+};
+
+export default { start };

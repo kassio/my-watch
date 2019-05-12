@@ -1,4 +1,6 @@
 import document from 'document';
+import clock from 'clock';
+import { display } from 'display';
 import { preferences } from 'user-settings';
 import * as util from '../common/utils';
 
@@ -20,7 +22,7 @@ const renderDate = event => {
   const today = event.date;
   const weekDay = util.weekDayName(today.getDay());
   const day = util.zeroPad(today.getDate());
-  const month = util.zeroPad(today.getMonth());
+  const month = util.zeroPad(today.getMonth() + 1);
   const watchDateLabel = document.getElementById('date');
 
   watchDateLabel.text = `${weekDay}, ${day}/${month}`;
@@ -34,4 +36,20 @@ const formatHours = hours => {
   }
 };
 
-export default { render };
+const start = onTick => {
+  clock.granularity = 'minutes';
+  clock.ontick = event => {
+    render(event);
+    onTick();
+  };
+
+  display.onchange = () => {
+    if (display.on) {
+      clock.granularity = 'minutes';
+    } else {
+      clock.granularity = 'hours';
+    }
+  };
+};
+
+export default { start };

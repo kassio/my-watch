@@ -5,9 +5,9 @@
       <text id="battery" class="battery"/>
     </section>
 
-    <section x="55" y="0">
-      <text id="time" class="time" x="5%" y="$+70"/>
-      <text id="date" class="date" x="100%-65" y="$-45"/>
+    <section x="25%" y="0">
+      <text id="time" class="time" x="0" y="$+70"/>
+      <text id="date" class="date" x="+5" y="$-45"/>
     </section>
   </svg>
 

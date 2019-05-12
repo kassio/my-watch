@@ -25,14 +25,6 @@ const stats = {
   }
 };
 
-const render = () => {
-  if (appbit.permissions.granted('access_activity')) {
-    for (let key in stats) {
-      setStat(stats[key]);
-    }
-  }
-};
-
 const setStat = stat => {
   const statName = formatStatName(stat.id);
   const done = today.adjusted[statName];
@@ -56,4 +48,12 @@ const formatValue = value => {
   }
 };
 
-export default { render };
+const render = () => {
+  if (appbit.permissions.granted('access_activity')) {
+    for (let key in stats) {
+      setStat(stats[key]);
+    }
+  }
+};
+
+export default { start: render };
