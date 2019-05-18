@@ -2,7 +2,9 @@ import document from 'document';
 import { me as appbit } from 'appbit';
 import { today, goals } from 'user-activity';
 
-const stats = {
+import * as messaging from 'messaging';
+
+let stats = {
   activeMinutes: {
     color: 'fb-red',
     id: 'active-minutes'
@@ -22,6 +24,13 @@ const stats = {
   distance: {
     color: 'fb-purple',
     id: 'distance'
+  }
+};
+
+messaging.peerSocket.onmessage = ({ data }) => {
+  if (Object.keys(stats).indexOf(data.key) >= 0) {
+    stats[data.key].color = data.value;
+    render();
   }
 };
 
