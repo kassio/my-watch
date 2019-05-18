@@ -2,7 +2,7 @@ import document from 'document';
 import { charger } from 'power';
 import { battery } from 'power';
 
-const render = battery => {
+const render = () => {
   const icon = document.getElementById('battery-icon');
   const batteryLabel = document.getElementById('battery');
   const batteryLevel = Math.floor(battery.chargeLevel);

@@ -20,18 +20,18 @@ const startSensor = heartRateSensor => {
     const bodyPresenceSensor = new BodyPresenceSensor();
 
     bodyPresenceSensor.addEventListener('reading', () => {
-      toggle(heartRateSensor, bodyPresenceSensor.present && display.on);
+      toggleSensor(heartRateSensor, bodyPresenceSensor.present && display.on);
     });
 
     bodyPresenceSensor.start();
   }
 
   display.addEventListener('change', () => {
-    toggle(heartRateSensor, display.on);
+    toggleSensor(heartRateSensor, display.on);
   });
 };
 
-const toggle = (heartRateSensor, cond) => {
+const toggleSensor = (heartRateSensor, cond) => {
   if (cond) {
     heartRateSensor.start();
   } else {

@@ -36,7 +36,7 @@ const formatHours = hours => {
   }
 };
 
-const start = onTick => {
+const start = ({ onTick }) => {
   clock.granularity = 'minutes';
   clock.ontick = event => {
     render(event);

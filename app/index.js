@@ -7,6 +7,8 @@ BatteryComponent.start();
 
 HeartRateComponent.start();
 
-DateTimeComponent.start(() => {
-  StatsComponent.start();
+DateTimeComponent.start({
+  onTick: () => {
+    StatsComponent.start();
+  }
 });
