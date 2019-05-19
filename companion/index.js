@@ -1,50 +1,37 @@
 import { settingsStorage } from 'settings';
 import * as messaging from 'messaging';
-import { me } from 'companion';
-import { settingsKeys } from '../common/utils.js';
 
-// Settings have been changed
-settingsStorage.onchange = event => {
-  sendValue(event.key, event.newValue);
-};
+const messagesQueue = [];
 
-if (me.launchReasons.wokenUp && !settingsStorage.getItem('defaultSettingsLoaded')) {
-  setDefaults();
-}
-
-// Settings were changed while the companion was not running
-if (me.launchReasons.settingsChanged) {
-  if (!settingsStorage.getItem('defaultSettingsLoaded')) {
-    setDefaults();
-  } else {
-    settingsKeys.map(setting => sendValue(setting.id, settingValue(setting.id)));
+settingsStorage.onchange = function (evt) {
+  if (evt.newValue !== evt.oldValue) {
+    sendNewSettingValue(evt.key, evt.newValue);
   }
-}
-
-const settingValue = key => console.log('setting');
-// settingsStorage.getItem(key) || settingsKeys.find(setting => setting.id === key).defaultValue;
-
-const setDefaults = () => {
-  settingsKeys.map(setting =>
-    settingsStorage.setItem(setting.id, JSON.stringify(setting.defaultValue))
-  );
-  settingsStorage.setItem('defaultSettingsLoaded', JSON.parse(true));
 };
 
-const sendValue = (key, val) => {
-  if (val) {
+const sendNewSettingValue = (key, val) => {
+  if (key && val) {
     sendSettingData({
       key,
-      value: JSON.parse(val)
+      value: JSON.parse(val),
+      message: 'newSettingValue'
     });
   }
 };
 
-const sendSettingData = data => {
-  // If we have a MessageSocket, send the data to the device
+messaging.peerSocket.onopen = () => {
+  while (messagesQueue.length > 0) {
+    console.log('Dequeueing message');
+    let message = messagesQueue.pop();
+    messaging.peerSocket.send(message);
+  }
+};
+
+function sendSettingData(data) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   } else {
-    console.log('No peerSocket connection');
+    console.log(`Enqueueing message: ${JSON.stringify(data)}`);
+    messagesQueue.unshift(data);
   }
-};
+}

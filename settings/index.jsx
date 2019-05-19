@@ -38,6 +38,7 @@ const ColorSelector = ({ id, title }) =>
     <ColorSelect settingsKey={id} colors={colorSet} />
   </Section>
 ;
-const Settings = props => <Page>{settingsKeys.map(setting => ColorSelector(setting))}</Page>;
-
+const Settings = props =>
+  <Page>{Object.values(settingsKeys).map(setting => ColorSelector(setting))}</Page>
+;
 registerSettingsPage(Settings);
