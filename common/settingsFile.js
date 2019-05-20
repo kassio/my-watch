@@ -9,6 +9,7 @@ export const writeSetting = ({ key, value }) => {
 };
 
 export const writeSettings = settings => {
+  console.info(`WRITING SETTINGS ${JSON.stringify(settings)}`);
   fs.writeFileSync(SETTINGS_FILE, settings, 'cbor');
 };
 
@@ -38,9 +39,7 @@ const defaultSettings = () => {
   let result = {};
 
   for (let key in settingsKeys) {
-    const entry = settingsKeys[key];
-    const { id, defaultValue } = entry;
-
+    const { defaultValue } = settingsKeys[key];
     result[key] = defaultValue;
   }
 

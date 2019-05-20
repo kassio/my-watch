@@ -3,9 +3,9 @@ import * as messaging from 'messaging';
 
 const messagesQueue = [];
 
-settingsStorage.onchange = function (evt) {
-  if (evt.newValue !== evt.oldValue) {
-    sendNewSettingValue(evt.key, evt.newValue);
+settingsStorage.onchange = event => {
+  if (event.newValue !== event.oldValue) {
+    sendNewSettingValue(event.key, event.newValue);
   }
 };
 
@@ -21,17 +21,17 @@ const sendNewSettingValue = (key, val) => {
 
 messaging.peerSocket.onopen = () => {
   while (messagesQueue.length > 0) {
-    console.log('Dequeueing message');
+    console.info('Dequeueing message');
     let message = messagesQueue.pop();
     messaging.peerSocket.send(message);
   }
 };
 
-function sendSettingData(data) {
+const sendSettingData = data => {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   } else {
-    console.log(`Enqueueing message: ${JSON.stringify(data)}`);
+    console.info(`Enqueueing message: ${JSON.stringify(data)}`);
     messagesQueue.unshift(data);
   }
-}
+};
