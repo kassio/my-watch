@@ -1,6 +1,5 @@
 import document from 'document';
 import clock from 'clock';
-import { display } from 'display';
 import { preferences } from 'user-settings';
 import * as util from '../common/utils';
 
@@ -41,14 +40,6 @@ const start = ({ onTick }) => {
   clock.ontick = event => {
     render(event);
     onTick();
-  };
-
-  display.onchange = () => {
-    if (display.on) {
-      clock.granularity = 'minutes';
-    } else {
-      clock.granularity = 'hours';
-    }
   };
 };
 
