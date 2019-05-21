@@ -21,8 +21,8 @@ const sendNewSettingValue = (key, val) => {
 
 messaging.peerSocket.onopen = () => {
   while (messagesQueue.length > 0) {
-    console.info('Dequeueing message');
     let message = messagesQueue.pop();
+    console.info(`Dequeueing message ${JSON.stringify(message)}`); // eslint-disable-line no-console
     messaging.peerSocket.send(message);
   }
 };
@@ -31,7 +31,7 @@ const sendSettingData = data => {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(data);
   } else {
-    console.info(`Enqueueing message: ${JSON.stringify(data)}`);
+    console.info(`Enqueueing message: ${JSON.stringify(data)}`); // eslint-disable-line no-console
     messagesQueue.unshift(data);
   }
 };

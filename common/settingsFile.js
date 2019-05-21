@@ -9,7 +9,7 @@ export const writeSetting = ({ key, value }) => {
 };
 
 export const writeSettings = settings => {
-  console.info(`WRITING SETTINGS ${JSON.stringify(settings)}`);
+  console.info(`WRITING SETTINGS ${JSON.stringify(settings)}`); // eslint-disable-line no-console
   fs.writeFileSync(SETTINGS_FILE, settings, 'cbor');
 };
 
@@ -29,7 +29,7 @@ const readSettings = (retry = false) => {
       writeSettings(defaultSettings());
       return readSettings(true);
     } else {
-      console.error(`>>> Failed to read settings: ${error}`);
+      console.error(`>>> Failed to read settings: ${error}`); // eslint-disable-line no-console
       return {};
     }
   }
